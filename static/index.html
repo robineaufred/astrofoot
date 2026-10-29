@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Astro-Foot · méthode Frawley</title>
+<meta name="theme-color" content="#0b0e1a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctext y=%2726%27 font-size=%2728%27%3E%E2%98%BD%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <h1><span class="logo">☽</span> Astro-Foot <small>méthode « Sports Astrology » de John Frawley</small></h1>
+    <p class="disc">⚠️ Divertissement et étude d'une méthode livresque. <b>Aucune validité statistique démontrée</b> (le livre ne donne que des anecdotes). Ne l'utilisez pas pour parier.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card" id="step1">
+    <h2><span class="n">1</span> Choisir un match</h2>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-tab="auto" role="tab">📅 Matchs à venir <span id="srcBadge" class="badge">…</span></button>
+      <button class="tab" data-tab="manu" role="tab">✍️ Saisie manuelle</button>
+    </div>
+
+    <div id="tab-auto">
+      <p id="srcNote" class="muted small"></p>
+      <div class="filters">
+        <select id="fComp" aria-label="Compétition"><option value="">Toutes les compétitions</option></select>
+        <input id="fSearch" type="search" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe">
+        <button id="btnRefresh" class="ghost" title="Recharger la liste">↻</button>
+      </div>
+      <div id="matchList" class="matchlist" aria-live="polite"><p class="muted">Chargement du calendrier…</p></div>
+    </div>
+
+    <div id="tab-manu" hidden>
+      <p class="muted small">Saisie <b>manuelle</b> : renseignez l'heure <b>locale</b> du coup d'envoi ; le fuseau et l'heure d'été sont déduits du lieu (Nominatim / OpenStreetMap, avec liste de secours).</p>
+      <div class="examples">
+        <span class="muted small">Exemples :</span>
+        <button class="chip" data-ex="0">France–Brésil 1998 (finale)</button>
+        <button class="chip" data-ex="1">Real Madrid–Leverkusen 2002</button>
+        <button class="chip" data-ex="2">PSG–OM (exemple fictif)</button>
+      </div>
+      <form id="manForm" class="grid">
+        <label>Équipe A (ex. domicile)<input name="a" required placeholder="Paris Saint-Germain"></label>
+        <label>Équipe B<input name="b" required placeholder="Olympique de Marseille"></label>
+        <label>Date locale<input name="date" type="date" required></label>
+        <label>Heure locale du coup d'envoi<input name="heure" type="time" required></label>
+        <label>Stade<input name="stade" placeholder="Parc des Princes"></label>
+        <label>Ville<input name="ville" placeholder="Paris" required></label>
+        <label>Pays (facultatif)<input name="pays" placeholder="France"></label>
+        <label class="chk"><input name="ko" type="checkbox"> Élimination directe (prolongation possible)</label>
+      </form>
+    </div>
+  </section>
+
+  <section class="card" id="step2" hidden>
+    <h2><span class="n">2</span> Favori &amp; prédiction</h2>
+    <div id="selSummary" class="selsum"></div>
+    <div id="venueRow" class="grid" hidden>
+      <label>Stade<input id="vStade"></label>
+      <label>Ville<input id="vVille"></label>
+    </div>
+    <div class="favbox">
+      <label for="fav">Qui est le favori ? <span class="muted small">(le livre exige de le désigner d'après les cotes — domicile/extérieur ne compte pas)</span></label>
+      <select id="fav">
+        <option value="">— choisir —</option>
+        <option value="a">A est favorite</option>
+        <option value="b">B est favorite</option>
+        <option value="egal">Égalité (cotes quasi égales)</option>
+      </select>
+      <p id="favNote" class="small muted"></p>
+      <p class="warn small">⚠️ Si les deux équipes sont à égalité, la méthode est <b>inutilisable</b> (« We can't use this method », Frawley p.79) : le résultat sera « indéterminé ».</p>
+    </div>
+    <button id="btnPredict" class="primary" disabled>🔮 Prédire</button>
+  </section>
+
+  <section id="result" hidden></section>
+</main>
+
+<footer class="wrap foot">
+  <p>Application à but de <b>divertissement et d'étude</b> de la méthode « thème d'événement » (chap. 2) de <i>Sports Astrology</i>. Les poids/priorités des témoignages sont des <b>hypothèses d'implémentation</b> (le livre n'en donne aucun) réglées sur 25 exemples du livre ; <b>aucun taux de réussite n'est revendiqué</b>. Pas d'incitation aux paris. Si vous ou un proche avez un problème avec le jeu : <b>09 74 75 13 13</b> (Joueurs Info Service, France).</p>
+</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

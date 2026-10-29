@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+timezonefinder
+ephem
+requests
+pydantic
+tzdata
+httpx

@@ -1,0 +1,29 @@
+E01  OK  prédit=outsider niveau=1 conf=élevée score prédit 1-2 (livre: Dortmund 3-1) ✗
+E02  OK  prédit=outsider niveau=2 conf=moyenne score prédit 0-2 (livre: Wales 1-0) ✗
+E03  OK  prédit=outsider niveau=2 conf=moyenne score prédit 0-2 (livre: 0-0, Red Star on penalties) ✗
+E04  OK  prédit=outsider niveau=1 conf=élevée score prédit 1-2 (livre: Swindon 3-1 a.e.t.) ✗
+E05  OK  prédit=favori niveau=1 conf=élevée
+E06  OK  prédit=outsider niveau=1 conf=moyenne
+E07  OK  prédit=outsider niveau=3 conf=faible
+E08  OK  prédit=favori niveau=1 conf=élevée
+E09  OK  prédit=favori niveau=2 conf=moyenne
+E10  OK  prédit=outsider niveau=1 conf=élevée
+E11  OK  prédit=favori niveau=1 conf=élevée
+E12  OK  prédit=outsider niveau=1 conf=élevée
+E13  OK  prédit=favori niveau=1 conf=élevée
+E14  OK  prédit=outsider niveau=2 conf=moyenne
+E15  KO  prédit=outsider niveau=2 conf=moyenne
+E16  OK  prédit=favori niveau=1 conf=moyenne
+E17  OK  prédit=outsider niveau=1 conf=élevée
+E18  OK  prédit=favori niveau=2 conf=moyenne score prédit 2-0 (livre: Arsenal 2-0) ✓
+E19  OK  prédit=outsider niveau=1 conf=moyenne score prédit 0-2 (livre: Hearts 2-1) ✗
+T07  OK  prédit=favori niveau=None conf=faible
+T08  OK  prédit=outsider niveau=1 conf=élevée
+T09  OK  prédit=favori niveau=1 conf=moyenne
+T10  OK  prédit=favori niveau=None conf=faible score prédit 2-1 (livre: Real 2-1) ✓
+T11  OK  prédit=outsider niveau=2 conf=moyenne score prédit 0-2 (livre: Liverpool 2-0) ✓
+T12  OK  prédit=outsider niveau=1 conf=moyenne score prédit 0-2 (livre: France 3-0) ✗
+
+VAINQUEUR : 24/25  (échecs : E15)  — réglé sur ces mêmes cas, non indépendant
+SCORE EXACT (foot, matchs avec score) : 3/9 — indicatif
+Référence « toujours favori » : 11 /25
